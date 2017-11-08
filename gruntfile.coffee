@@ -84,13 +84,6 @@ module.exports = (grunt) ->
         defaultForLanguage: true
         numberFormat: '0,0.[00]'
         currencyFormat: '$0,0.00'
-      'ru-RU':
-        locale: 'ru-RU'
-        url: '/ru'
-        rtl: false
-        defaultForLanguage: true
-        numberFormat: '0,0.[00]'
-        currencyFormat: '0,0.00 $'
     baseLocale: 'en-US'
 
   grunt.config.merge
