@@ -1,0 +1,51 @@
+{% from '_components/_NavItem.nj' import NavItem with context %}
+
+{##
+ # Display nav block
+ #
+ # @param {string}  [class='nav nav--spacing']    Class of list
+ # @param {string}  [itemsClass='']               Class of list items
+ # @param {string}  [anchorsClass='']             Class of anchors inside list itmes
+ # @param {boolean} [exact=false]                 Set items to be active only if item
+ #                                                path completely matches current breadcrumb
+ # @param {string}  [activeClass='is-active']     Class of active list item
+ # @param {number}  [startDepth=1]                From which depth nav should start to print
+ # @param {number}  [maxDepth=999999]             Max amount of subnavs to print
+ # @param {boolean} [showInnerOnlyOnActive=false] Print subnavs only when parent is active
+ #
+ # @return {string} Generated nav
+ #
+ # @example {{ Nav() }}
+ #}
+{% macro Nav(
+  class                 = 'nav nav--spacing',
+  itemsClass            = '',
+  anchorsClass          = '',
+  exact                 = false,
+  activeClass           = 'is-active',
+  startDepth            = 1,
+  maxDepth              = 999999,
+  showInnerOnlyOnActive = false
+) %}
+<ul class='{{ class }}'>
+  {% macro Item(to, label, depth = 1, class = itemsClass, anchorClass = anchorsClass, exact = exact) %}
+  {% call(depth) NavItem(
+    to = to,
+    label = label,
+    depth = depth,
+    class = itemsClass,
+    anchorClass = anchorsClass,
+    exact = exact,
+    activeClass = activeClass,
+    startDepth = startDepth,
+    maxDepth = maxDepth,
+    showInnerOnlyOnActive = showInnerOnlyOnActive
+  ) %}{{ caller(depth) }}{% endcall %}
+  {% endmacro %}
+
+  {% call(depth) Item('/', exact = true) %}{% endcall %}
+  {% call(depth) Item('/examples') %}{% endcall %}
+  {% call(depth) Item('/blog') %}{% endcall %}
+
+</ul>
+{% endmacro %}

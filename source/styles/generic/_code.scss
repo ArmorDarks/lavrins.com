@@ -1,0 +1,24 @@
+// stylelint-disable selector-max-type
+
+// =============================================================================
+// ^CODE
+// =============================================================================
+
+pre,
+code {
+  @include ekzo-theme() {
+    color: ekzo-theme(code);
+    background-color: ekzo-theme(code-bg);
+  }
+
+  border-radius: ekzo-border-radius('');
+}
+
+code { padding: ekzo-em(ekzo-space(.25) / 2); }
+
+pre {
+  padding: ekzo-em(ekzo-space(.25));
+
+  code { @include ekzo-theme() { background-color: transparent; } }
+
+}
