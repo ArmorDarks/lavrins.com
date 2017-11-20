@@ -58,7 +58,6 @@
 @import 'node_modules/ekzo/generic/text';
 
 @import 'generic/code';
-@import 'generic/font-faces';
 @import 'generic/form';
 @import 'generic/link';
 
@@ -93,31 +92,13 @@
 // -----------------------------------------------------------------------------
 
 @import 'components/Btn';
-@import 'components/Content';
-@import 'components/Content-header';
-@import 'components/Content-title';
 @import 'components/Footer';
-@import 'components/Header';
 @import 'components/Icon';
-@import 'components/Logo';
 @import 'components/Main';
-@import 'components/Nav';
 @import 'components/Outdated-browser';
 @import 'components/Sidebar';
 // @import 'components/Sprites';
 @import 'components/Wrapper';
-
-// -----------------------------------------------------------------------------
-// Pages
-// -----------------------------------------------------------------------------
-
-@import 'pages/index';
-
-// -----------------------------------------------------------------------------
-// Scopes
-// -----------------------------------------------------------------------------
-
-@import 'scopes/blog-post';
 
 // -----------------------------------------------------------------------------
 // Helpers
