@@ -45,7 +45,7 @@ showContentTitle: false
 </section>
 
 <section class='About'>
-  <header class='Wrapper h-flex-x--start'>
+  <header class='Wrapper h-flex-x--start h-padding-top++' style='min-height: 80vh;'>
     <div class='Wrapper__content h-1/1'>
 
       <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter'>Serj <span class='h-color--primary'>Lavrin</span></h2>
@@ -58,7 +58,7 @@ showContentTitle: false
     </div>
   </header>
 
-  <div class='Wrapper'>
+  <div class='Wrapper h-padding-bottom++ h-padding-top+' style='min-height: 80vh;'>
     <div class='Wrapper__content'>
       <div class='Box h-padding+ h-bleed-sides+@tablet'>
         <div class='o-grid h-childs-displace++ h-childs-space-top+ h-childs-space-top0@tablet'>
