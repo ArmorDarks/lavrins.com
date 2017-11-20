@@ -22,6 +22,14 @@ $wrapper-padding: ekzo-space();
     margin-right: auto;
   }
 
+  // Allows block to standout horizontally, by being wider
+  // on screens 1200px+
+  .Wrapper__content--extended {
+    // Multiply spacing twice, since it should give space for padding * 3
+    // from both sides
+    max-width: 1200px + ekzo-space(3) * 2;
+  }
+
 .Wrapper--bleed {
   margin: - $wrapper-padding;
 }
