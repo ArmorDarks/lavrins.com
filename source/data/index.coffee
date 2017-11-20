@@ -90,11 +90,13 @@ module.exports = ({ config }) ->
       'Native DOM API'
       'React'
       'Redux'
-      'ARIA'
+      'Jest'
       'Grunt'
       'Nunjucks'
       'HTML'
       'CSS'
+      'ARIA'
+      'RDFa'
       'Sass'
       'Gettext'
       'Git'
@@ -108,7 +110,6 @@ module.exports = ({ config }) ->
       # 'Redmine'
       # 'Slack'
       # 'Teams'
-      'RDFa'
     ]
     TRAITS: [
       'Magically self-orginized'
