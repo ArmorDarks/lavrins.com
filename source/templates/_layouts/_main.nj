@@ -1,47 +1,26 @@
 {% extends '_layouts/_base.nj' %}
 
 {% block body %}
+{% from '_components/_Icon.nj' import Icon with context %}
 
 <!-- Header -->
 <!-- ====== -->
 
-<header class='Header h-margin-ends'>
-  <div class='Wrapper Wrapper--content'>
-    <div class='o-grid h-flex-y--center h-childs-displace'>
-
-      <div class='o-grid__item'>
-        <a class='Logo h-h1 h-text--underline0' href='{{ localeDir() }}'>
-          <img src='{{ SITE.logo }}' height='48' alt='{{ SITE.name }}'>
-        </a>
-      </div>
-
-    </div>
-  </div>
+<header class='Header'>
+  <p>Blood, Tears &amp; Design</p>
 </header>
 
 <!-- Main -->
 <!-- ==== -->
 
-<main class='Main o-panel__body o-panel' role='main'>
-  <article class='o-panel o-panel__body h-1/1 {{ 'Wrapper Wrapper--content' if PAGE.applyWrapper }}'>
+<main role='main'>
+  <article>
 
     {% if PAGE.showContentTitle %}
     <h1 class='Content-title h-align--center h-margin-bottom0'>{{ PAGE.contentTitle }}</h1>
     {% endif %}
 
-    <div class='o-grid o-panel__body {{ 'h-childs-displace+' if PAGE.showSidebar}}'>
-
-      <div class='Content o-grid__item {{ 'h-1/1' if not PAGE.showSidebar else 'h-9/12' }} h-margin-top'>
-        {% block main %}{% endblock %}
-      </div>
-
-      {% if PAGE.showSidebar %}
-      <aside class='Sidebar o-grid__item h-3/12 h-margin-top'>
-        {% block sidebar %}{% endblock %}
-      </aside>
-      {% endif %}
-
-    </div>
+    {% block main %}{% endblock %}
 
   </article>
 </main>
@@ -49,12 +28,32 @@
 <!-- Footer -->
 <!-- ====== -->
 
-<!--/noindex-->
-<footer class='Footer o-panel__footer h-padding-ends'>
-  <div class='Wrapper Wrapper--content'>
-    © 2014–{{ moment().year() }} {{ SITE.name }}  {{ SITE.version }}
-  </div>
+<footer class=''>
+  {% macro SocialUrls(class, itemsClass, anchorsClass, iconsClass) %}
+  <ul class='{{ class }} g-list0 h-inline-block h-align--middle'>
+
+    {% macro Item(name, iconName, url, itemClass = itemsClass, anchorClass = anchorsClass, iconClass = iconsClass)
+    %}
+    <li class='{{ itemClass }} Icon--right h-inline-block'>
+      <a href='{{ url }}' class='{{ anchorClass }} h-border-bottom0' aria-label='{{ name }}' target='_blank' rel='noopener'>
+        <span aria-hidden='true'>{{ Icon(iconName, class = iconClass) }}</span>
+      </a>
+    </li>
+    {% endmacro %}
+
+    {{ Item('Github', 'github', SOCIAL.github.url) }}
+    {{ Item('LinkedIn', 'linkedin', SOCIAL.linkedin.url) }}
+    {{ Item('Twitter', 'twitter', SOCIAL.twitter.url) }}
+    {{ Item('Facebook', 'facebook', SOCIAL.facebook.url) }}
+
+  </ul>
+  {% endmacro %}
+
+  {% set e = CONTACTS.main.email %}
+  {% set email = e[0] + '@' + e[1] %}
+
+  <p><a href='mailto:{{ email }}'>{{ email }}</a></p>
+  <p>{{ SocialUrls() }}</p>
 </footer>
-<!--/noindex-->
 
 {% endblock %}

@@ -1,19 +1,129 @@
 ---
 url: /
 
-title:           ={{ gettext('Kotsu Web Starter Kit') }}
-contentTitle:    ={{ gettext('Home') }}
+title:           ={{ gettext('Serj Lavrin — Research, Design, Web Development') }}
+contentTitle:    ={{ gettext('Research, Design, Development') }}
 navTitle:        ={{ gettext('Home') }}
 breadcrumbTitle: ={{ gettext('Home') }}
 
-description: ={{ gettext('Generated with %(company)s demo homepage') }}
-
-class:            p-index
-showContentTitle: false
-showBreadcrumb:   false
+description: ={{ gettext('Personal website of Serj Lavrin, a Product Designer and Web Developer') }}
 ---
 
 {% extends '_layouts/_main.nj' %}
 
 {% block main %}
+
+
+<section>
+  <h2>Research, Design, Development</h2>
+
+  {% macro Card(image) %}
+  <p>Card</p>
+  {% endmacro %}
+
+  {% for e in [
+    'imagePath'
+  ] %}{{ Card() }}{% endfor %}
+
+  <p class='h-align--cetner'>
+    <a class='Btn' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
+      View Open Source activity
+    </a>
+  </p>
+
+</section>
+
+<section>
+  {% macro Pill(label) %}
+  <span>{{ label }}</span>
+  {% endmacro %}
+
+  <h2>Serj Lavrin</h2>
+  <p>Product Designer & Web Developer from Ukraine</p>
+  <p>
+    {% for e in [
+      'Product Design',
+      'Research',
+      'Planning',
+      'Prototyping',
+      'UX\UI',
+      'Frontend Development',
+      'Consulting',
+      'A11y',
+      'I11n and L10n'
+    ] %}{{ Pill(e) }}{% endfor %}
+  </p>
+
+  <div>
+
+    <section>
+      <h3>Technologies</h3>
+      <p>
+        {% for e in [
+          'JavaScript',
+          'Node',
+          'NPM',
+          'Native DOM API',
+          'jQuery',
+          'React',
+          'Redux',
+          'ARIA',
+          'Grunt',
+          'Nunjucks',
+          'HTML',
+          'CSS',
+          'Sass',
+          'Gettext',
+          'Git',
+          'Pen &amp; Papper',
+          'Photoshop',
+          'Figma',
+          'Github',
+          'Coggle',
+          'MindMeister',
+          'Trello',
+          'Redmine',
+          'Slack',
+          'Teams',
+          'RDFa'
+        ] %}{{ Pill(e) }}{% endfor %}
+      </p>
+    </section>
+
+    <section>
+      <h3>Traits</h3>
+      <ul>
+        {% for e in [
+          'Magically self-orginized',
+          'Bloody perfectionist',
+          'Constructivist',
+          'Mix of realist and idealist',
+          'Diehard justice knight',
+          'Musician'
+        ] %}
+        <li>{{ e }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h3>Plans</h3>
+      <ul>
+        {% for e in [
+          'Be even better UX designer',
+          'Become graphical artist',
+          'Backend',
+          'Deeper programming unerstanding',
+          'Learn non-OOP language',
+          'Make a game',
+          'Mobile design &amp; development',
+          'Leadership'
+        ] %}
+        <li>{{ e }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+  </div>
+</section>
 {% endblock %}
