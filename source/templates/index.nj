@@ -45,7 +45,7 @@ showContentTitle: false
 </section>
 
 <section class='About'>
-  <header class='Wrapper h-flex-x--start@tablet h-padding-top++' style='min-height: 80vh;'>
+  <header class='Wrapper h-padding-top++' style='min-height: 80vh;'>
     <div class='Wrapper__content Wrapper__content--extended h-padding+ h-1/1@tablet'>
 
       <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter'>Serj <span class='h-color--primary'>Lavrin</span></h2>

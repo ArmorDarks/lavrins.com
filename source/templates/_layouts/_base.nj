@@ -102,7 +102,7 @@
 
 </head>
 
-<body class='{{ PAGE.bodyClass }} o-panel o-panel--max'>
+<body class='{{ PAGE.bodyClass }} o-panel'>
 
   {{ OutdatedBrowser(version = 'lte IE 9') }}
 

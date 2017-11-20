@@ -7,7 +7,8 @@ $wrapper-padding: ekzo-space();
 .Wrapper {
   display: flex;
 
-  justify-content: center;
+  // Auto margins used instead to center in IE
+  // justify-content: center;
   align-items: center;
 
   padding: $wrapper-padding;
