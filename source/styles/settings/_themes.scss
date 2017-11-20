@@ -3,10 +3,11 @@
 // =============================================================================
 
 $ekzo-colors: (
-  primary: #a593e0,
+  primary: #27fe56,
   secondary: kotsu-theme-color(),
-  green-white: #e0e3da,
-  ivory: #fffff3,
+  white: #fff,
+  iron: #cdcfd3,
+  iron50: rgba(#cdcfd3, .5),
   black-30: rgba(#000, .3)
 );
 
@@ -22,43 +23,43 @@ $ekzo-colors: (
   // Text
   // -----------------------------------------------------------------------------
 
-  text:                   ekzo-color(green-white),
+  text:                   ekzo-color(iron),
 
   // -----------------------------------------------------------------------------
   // Links
   // -----------------------------------------------------------------------------
 
-  links:                  ekzo-color(primary),
+  links:                  ekzo-color(white),
   links-hover:            ekzo-tint(ekzo-color(primary), 20),
 
   // -----------------------------------------------------------------------------
   // Headings
   // -----------------------------------------------------------------------------
 
-  headings:               null,
+  headings:               ekzo-color(white),
   extra-headings:         null,
 
   // -----------------------------------------------------------------------------
   // Selection
   // -----------------------------------------------------------------------------
 
-  selection:              null,
-  selection-bg:           null,
+  selection:              ekzo-color(white),
+  selection-bg:           ekzo-color(primary),
 
   // -----------------------------------------------------------------------------
   // Code
   // -----------------------------------------------------------------------------
 
-  code:                  ekzo-shade(ekzo-color(green-white), 10),
+  code:                  ekzo-shade(ekzo-color(iron), 10),
   code-bg:               ekzo-color(black-30),
 
   // -----------------------------------------------------------------------------
   // Forms
   // -----------------------------------------------------------------------------
 
-  forms:                  ekzo-color(green-white),
+  forms:                  ekzo-color(iron),
   forms-placeholder:      ekzo-tint(ekzo-color(secondary), 20),
-  forms-border:           rgba(ekzo-color(green-white), .3),
+  forms-border:           rgba(ekzo-color(iron), .3),
   forms-bg:               ekzo-color(secondary),
 
   // -----------------------------------------------------------------------------
@@ -71,14 +72,24 @@ $ekzo-colors: (
   // Buttons
   // -----------------------------------------------------------------------------
 
-  btn:                    ekzo-color(green-white),
-  btn-bg:                 ekzo-color(primary),
+  btn:                    ekzo-color(white),
+  btn-border:             rgba(ekzo-color(primary), .5),
+  btn-bg:                 null,
 
   // -----------------------------------------------------------------------------
   // Breadcrumb
   // -----------------------------------------------------------------------------
 
-  breadcrumb-links:      ekzo-color(green-white),
-  breadcrumb-delimiters: ekzo-tint(ekzo-color(green-white), 50),
+  breadcrumb-links:      ekzo-color(iron),
+  breadcrumb-delimiters: ekzo-tint(ekzo-color(iron), 50),
+
+  pill: ekzo-color(iron50),
+  pill-bg: #141616,
+
+  box-border: rgba(ekzo-color(primary), .1),
+
+  main-bg: rgba(#000, .25),
+  about-bg: rgba(#000, .15),
+  footer-bg: rgba(#000, .25)
 
 ))
