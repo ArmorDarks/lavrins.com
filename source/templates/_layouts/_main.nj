@@ -1,8 +1,6 @@
 {% extends '_layouts/_base.nj' %}
 
 {% block body %}
-{% from '_components/_Nav.nj' import Nav with context %}
-{% from '_components/_Breadcrumb.nj' import Breadcrumb with context %}
 
 <!-- Header -->
 <!-- ====== -->
@@ -17,19 +15,6 @@
         </a>
       </div>
 
-      <div class='o-grid__item h-flex+'>
-        <!--noindex-->
-        <nav class='Nav h-float--right'>
-          {{ Nav(
-            class        = 'o-nav h-childs-space-left',
-            itemsClass   = 'Nav__item',
-            anchorsClass = 'Nav__link h-text--underline0',
-            activeClass  = 'is-active'
-          ) }}
-        </nav>
-        <!--/noindex-->
-      </div>
-
     </div>
   </div>
 </header>
@@ -40,25 +25,8 @@
 <main class='Main o-panel__body o-panel' role='main'>
   <article class='o-panel o-panel__body h-1/1 {{ 'Wrapper Wrapper--content' if PAGE.applyWrapper }}'>
 
-    {% if PAGE.showBreadcrumb or PAGE.showContentTitle %}
-    <header class='Content-header'>
-
-      {% if PAGE.showBreadcrumb %}
-      {{ Breadcrumb(
-        class           = 'o-breadcrumb o-breadcrumb--rev h-text- h-flex-x--center',
-        itemsClass      = 'o-breadcrumb__item',
-        anchorsClass    = 'h-text--underline0',
-        rootItemClass   = 'h-font-weight--bolder',
-        rootAnchorClass = '',
-        displayLast     = false
-      ) }}
-      {% endif %}
-
-      {% if PAGE.showContentTitle %}
-      <h1 class='Content-title h-align--center h-margin-bottom0'>{{ PAGE.contentTitle }}</h1>
-      {% endif %}
-
-    </header>
+    {% if PAGE.showContentTitle %}
+    <h1 class='Content-title h-align--center h-margin-bottom0'>{{ PAGE.contentTitle }}</h1>
     {% endif %}
 
     <div class='o-grid o-panel__body {{ 'h-childs-displace+' if PAGE.showSidebar}}'>
