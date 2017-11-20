@@ -66,13 +66,14 @@ Data = module.exports = t.struct({
     bodyClass: t.maybe t.String
     applyWrapper: t.maybe t.Boolean
     showContentTitle: t.maybe t.Boolean
-    showBreadcrumb: t.maybe t.Boolean
-    showSidebar: t.maybe t.Boolean
   SOCIAL: t.dict t.String, t.struct({
       handle: t.maybe r.Handle
       image: t.maybe r.Imagepath
       url: r.Absoluteurl
     }, { name: 'Social' })
+  CONTACTS: t.dict t.String, t.struct({
+    email: r.Maxlength(2)(t.list(t.String))
+  })
   ENV: t.struct
     production: t.maybe t.Boolean
     staging: t.maybe t.Boolean

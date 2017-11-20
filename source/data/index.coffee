@@ -36,16 +36,23 @@ module.exports = ({ config }) ->
       bodyClass: ''
       applyWrapper: true
       showContentTitle: true
-      showBreadcrumb: true
-      showSidebar: false
     SOCIAL: # Add any other social services following same pattern
+      github:
+        image: "/#{imagesPath}/github.png"
+        url: 'https://github.com/ArmorDarks'
+      linkedin:
+        image: "/#{imagesPath}/linkedin.png"
+        url: 'https://www.linkedin.com/in/lavrin/'
       twitter:
-        handle: pkg.twitter
+        handle: '@ArmorDarks'
         image: "/#{imagesPath}/twitter.png"
-        url: "https://twitter.com/#{pkg.twitter}"
+        url: "https://twitter.com/ArmorDarks"
       facebook:
         image: "/#{imagesPath}/facebook.png"
-        url: 'https://www.facebook.com/Lotus-TM-647393298791066/'
+        url: 'https://www.facebook.com/serj.lavrinenko'
+    CONTACTS:
+      main:
+        email: ['hello', 'lavrins.com']
     ENV:
       production: config('env.production')
       staging: config('env.staging')
