@@ -74,6 +74,14 @@ Data = module.exports = t.struct({
   CONTACTS: t.dict t.String, t.struct({
     email: r.Maxlength(2)(t.list(t.String))
   })
+  WORKS: t.dict t.String, t.struct({
+    title: t.String
+    image: t.Imagepath
+  })
+  SPECS: t.list(t.String)
+  SKILLS: t.list(t.String)
+  TRAITS: t.list(t.String)
+  PLANS: t.list(t.String)
   ENV: t.struct
     production: t.maybe t.Boolean
     staging: t.maybe t.Boolean
