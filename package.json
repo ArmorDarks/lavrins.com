@@ -77,7 +77,8 @@
     "name": "kotsu",
     "main": "main.js",
     "dependencies": {
-      "babel-polyfill": "npm:babel-polyfill@^6.23.0"
+      "babel-polyfill": "npm:babel-polyfill@^6.23.0",
+      "jump.js": "npm:jump.js@^1.0.2"
     },
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21",

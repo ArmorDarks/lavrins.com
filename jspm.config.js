@@ -56,6 +56,7 @@ SystemJS.config({
   map: {
     "babel-polyfill": "npm:babel-polyfill@6.23.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
+    "jump.js": "npm:jump.js@1.0.2",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1"
   },
