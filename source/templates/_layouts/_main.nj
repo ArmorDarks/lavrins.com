@@ -6,18 +6,23 @@
 <!-- Header -->
 <!-- ====== -->
 
-<header class='Header'>
-  <p>Blood, Tears &amp; Design</p>
+<header class='Wrapper'>
+  <p class='Wrapper__content h-extra-h h-align--center'>
+    <a href='#main' class='h-text--tracked07 h-text--underline0'>
+      Blood, Tears
+      <span class='h-color--primary'>&amp;&nbsp;Design</span>
+    </a>
+  </p>
 </header>
 
 <!-- Main -->
 <!-- ==== -->
 
-<main role='main'>
+<main id='main' class='Main' role='main'>
   <article>
 
     {% if PAGE.showContentTitle %}
-    <h1 class='Content-title h-align--center h-margin-bottom0'>{{ PAGE.contentTitle }}</h1>
+    <h1>{{ PAGE.contentTitle }}</h1>
     {% endif %}
 
     {% block main %}{% endblock %}
@@ -28,32 +33,38 @@
 <!-- Footer -->
 <!-- ====== -->
 
-<footer class=''>
-  {% macro SocialUrls(class, itemsClass, anchorsClass, iconsClass) %}
-  <ul class='{{ class }} g-list0 h-inline-block h-align--middle'>
+<footer class='Footer Wrapper'>
+  <div class='Wrapper__content'>
+    {% macro SocialUrls(class, itemsClass, anchorsClass, iconsClass) %}
+    <ul class='{{ class }} g-list0 h-inline-block h-align--middle h-childs-displace- h-text--em+--'>
 
-    {% macro Item(name, iconName, url, itemClass = itemsClass, anchorClass = anchorsClass, iconClass = iconsClass)
-    %}
-    <li class='{{ itemClass }} Icon--right h-inline-block'>
-      <a href='{{ url }}' class='{{ anchorClass }} h-border-bottom0' aria-label='{{ name }}' target='_blank' rel='noopener'>
-        <span aria-hidden='true'>{{ Icon(iconName, class = iconClass) }}</span>
-      </a>
-    </li>
+      {% macro Item(name, iconName, url, itemClass = itemsClass, anchorClass = anchorsClass, iconClass = iconsClass)
+      %}
+      <li class='{{ itemClass }} Icon--left h-inline-block'>
+        <a href='{{ url }}' class='{{ anchorClass }} h-opacity--30 h-opacity--100:h' aria-label='{{ name }}' target='_blank' rel='noopener'>
+          <span aria-hidden='true'>{{ Icon(iconName, class = iconClass) }}</span>
+        </a>
+      </li>
+      {% endmacro %}
+
+      {{ Item('Github', 'github', SOCIAL.github.url) }}
+      {{ Item('LinkedIn', 'linkedin', SOCIAL.linkedin.url) }}
+      {{ Item('Twitter', 'twitter', SOCIAL.twitter.url) }}
+      {{ Item('Facebook', 'facebook', SOCIAL.facebook.url) }}
+
+    </ul>
     {% endmacro %}
 
-    {{ Item('Github', 'github', SOCIAL.github.url) }}
-    {{ Item('LinkedIn', 'linkedin', SOCIAL.linkedin.url) }}
-    {{ Item('Twitter', 'twitter', SOCIAL.twitter.url) }}
-    {{ Item('Facebook', 'facebook', SOCIAL.facebook.url) }}
+    {% set e = CONTACTS.main.email %}
+    {% set email = e[0] + '@' + e[1] %}
 
-  </ul>
-  {% endmacro %}
+    <p>
+      <a class='h-text--underline0 h-text--em+ h-extra-h+@tablet h-text--tracked25' href='mailto:{{ email }}'>{{ e[0] }}<span class='h-color--primary'>{{ '@' + e[1] }}</span></a>
+    </p>
 
-  {% set e = CONTACTS.main.email %}
-  {% set email = e[0] + '@' + e[1] %}
+    {{ SocialUrls() }}
 
-  <p><a href='mailto:{{ email }}'>{{ email }}</a></p>
-  <p>{{ SocialUrls() }}</p>
+  </div>
 </footer>
 
 {% endblock %}

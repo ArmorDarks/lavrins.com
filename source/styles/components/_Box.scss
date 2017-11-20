@@ -1,9 +1,13 @@
 // =============================================================================
-// ^SITE-FOOTER
+// ^Box
 // =============================================================================
 
-.Footer {
+.Box {
   @include ekzo-theme() {
-    background-color: ekzo-theme(footer-bg);
+    border-color: ekzo-theme(box-border);
   }
+
+  border-width: 1px;
+
+  border-radius: ekzo-border-radius('');
 }

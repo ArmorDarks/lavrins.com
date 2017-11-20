@@ -5,6 +5,9 @@
 // =============================================================================
 
 .Main {
+  @include ekzo-theme() {
+    background-color: ekzo-theme(main-bg);
+  }
 
   p:last-child,
   ul:last-child { margin-bottom: 0; }

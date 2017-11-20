@@ -1,0 +1,25 @@
+// =============================================================================
+// ^Pill
+// =============================================================================
+
+.Pill {
+  display: inline-block;
+
+  padding-left: ekzo-space(.5);
+  padding-right: ekzo-space(.5);
+  padding-top: ekzo-space(.25) / 2;
+  padding-bottom: ekzo-space(.25) / 2;
+
+  margin-bottom: ekzo-space(.25);
+
+  @include ekzo-theme() {
+    color: ekzo-theme(pill);
+    background-color: ekzo-theme(pill-bg);
+  }
+
+  @include ekzo-font-size('--', text);
+
+  white-space: nowrap;
+
+  border-radius: ekzo-border-radius('--round');
+}

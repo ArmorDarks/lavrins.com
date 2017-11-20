@@ -1,9 +1,9 @@
 // =============================================================================
-// ^SITE-FOOTER
+// ^About section
 // =============================================================================
 
-.Footer {
+.About {
   @include ekzo-theme() {
-    background-color: ekzo-theme(footer-bg);
+    background-color: ekzo-theme(about-bg);
   }
 }

@@ -60,6 +60,7 @@
 @import 'generic/code';
 @import 'generic/form';
 @import 'generic/link';
+@import 'generic/text';
 
 // -----------------------------------------------------------------------------
 // Objects
@@ -91,13 +92,15 @@
 // Components
 // -----------------------------------------------------------------------------
 
+@import 'components/About';
+@import 'components/Box';
 @import 'components/Btn';
 @import 'components/Footer';
 @import 'components/Icon';
 @import 'components/Main';
 @import 'components/Outdated-browser';
-@import 'components/Sidebar';
-// @import 'components/Sprites';
+@import 'components/Pill';
+@import 'components/Work-card';
 @import 'components/Wrapper';
 
 // -----------------------------------------------------------------------------

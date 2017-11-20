@@ -2,128 +2,92 @@
 url: /
 
 title:           ={{ gettext('Serj Lavrin — Research, Design, Web Development') }}
-contentTitle:    ={{ gettext('Research, Design, Development') }}
+contentTitle:    ={{ gettext("Research, <span class='h-color--primary'>Design</span>, Development") }}
 navTitle:        ={{ gettext('Home') }}
 breadcrumbTitle: ={{ gettext('Home') }}
 
-description: ={{ gettext('Personal website of Serj Lavrin, a Product Designer and Web Developer') }}
+description: ={{ gettext('Personal website of Serj Lavrin, a Product Designer &amp; Web Developer') }}
+
+showContentTitle: false
 ---
 
 {% extends '_layouts/_main.nj' %}
 
 {% block main %}
+{% from '_components/_Icon.nj' import Icon with context %}
 
+{% macro Pill(label) %}
+<span class='Pill'>{{ label }}</span>
+{% endmacro %}
 
-<section>
-  <h2>Research, Design, Development</h2>
+{% macro WorkCard(title, image) %}
+<article class='Work-card'>
+  <img class='Work-card__image' src='{{ urljoin('/', PATH.images, image) }}' alt='{{ title }}'>
+</article>
+{% endmacro %}
 
-  {% macro Card(image) %}
-  <p>Card</p>
-  {% endmacro %}
+<section class='Wrapper h-padding-ends++'>
+  <div class='Wrapper__content h-1/1'>
 
-  {% for e in [
-    'imagePath'
-  ] %}{{ Card() }}{% endfor %}
+    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-bottom+'>{{ PAGE.contentTitle }}</h1>
 
-  <p class='h-align--cetner'>
-    <a class='Btn' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
-      View Open Source activity
-    </a>
-  </p>
+    <div class='h-childs-space-top-'>
+      {% for e in WORKS %}{{ WorkCard(e.title, e.image) }}{% endfor %}
+    </div>
 
+    <p class='h-align--center h-margin-top++'>
+      <a class='Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
+        {{ Icon('github', class = 'Icon--left') }} View Open Source activity
+      </a>
+    </p>
+
+  </div>
 </section>
 
-<section>
-  {% macro Pill(label) %}
-  <span>{{ label }}</span>
-  {% endmacro %}
+<section class='About'>
+  <header class='Wrapper h-flex-x--start'>
+    <div class='Wrapper__content h-1/1'>
 
-  <h2>Serj Lavrin</h2>
-  <p>Product Designer & Web Developer from Ukraine</p>
-  <p>
-    {% for e in [
-      'Product Design',
-      'Research',
-      'Planning',
-      'Prototyping',
-      'UX\UI',
-      'Frontend Development',
-      'Consulting',
-      'A11y',
-      'I11n and L10n'
-    ] %}{{ Pill(e) }}{% endfor %}
-  </p>
+      <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter'>Serj <span class='h-color--primary'>Lavrin</span></h2>
 
-  <div>
-
-    <section>
-      <h3>Technologies</h3>
-      <p>
-        {% for e in [
-          'JavaScript',
-          'Node',
-          'NPM',
-          'Native DOM API',
-          'jQuery',
-          'React',
-          'Redux',
-          'ARIA',
-          'Grunt',
-          'Nunjucks',
-          'HTML',
-          'CSS',
-          'Sass',
-          'Gettext',
-          'Git',
-          'Pen &amp; Papper',
-          'Photoshop',
-          'Figma',
-          'Github',
-          'Coggle',
-          'MindMeister',
-          'Trello',
-          'Redmine',
-          'Slack',
-          'Teams',
-          'RDFa'
-        ] %}{{ Pill(e) }}{% endfor %}
+      <p class='h-text+ h-font-weight--lighter h-margin-top1.5'>Product Designer &amp; Web Developer</p>
+      <p class='Wrapper--readable h-margin-left0 h-margin-top1.5'>
+        {% for e in SPECS %}{{ Pill(e) }}{% endfor %}
       </p>
-    </section>
 
-    <section>
-      <h3>Traits</h3>
-      <ul>
-        {% for e in [
-          'Magically self-orginized',
-          'Bloody perfectionist',
-          'Constructivist',
-          'Mix of realist and idealist',
-          'Diehard justice knight',
-          'Musician'
-        ] %}
-        <li>{{ e }}</li>
-        {% endfor %}
-      </ul>
-    </section>
+    </div>
+  </header>
 
-    <section>
-      <h3>Plans</h3>
-      <ul>
-        {% for e in [
-          'Be even better UX designer',
-          'Become graphical artist',
-          'Backend',
-          'Deeper programming unerstanding',
-          'Learn non-OOP language',
-          'Make a game',
-          'Mobile design &amp; development',
-          'Leadership'
-        ] %}
-        <li>{{ e }}</li>
-        {% endfor %}
-      </ul>
-    </section>
+  <div class='Wrapper'>
+    <div class='Wrapper__content'>
+      <div class='Box h-padding+ h-bleed-sides+@tablet'>
+        <div class='o-grid h-childs-displace++ h-childs-space-top+ h-childs-space-top0@tablet'>
+          {% set gridItemClass = 'o-grid__item h-1/1 h-1/3@tablet' %}
 
+          <section class='{{ gridItemClass }}'>
+            <h3 class='h-text--caps h-color--iron'>Technologies</h3>
+            <p>
+              {% for e in SKILLS %}{{ Pill(e) }}{% endfor %}
+            </p>
+          </section>
+
+          <section class='{{ gridItemClass }}'>
+            <h3 class='h-text--caps h-color--iron'>Traits</h3>
+            <ul class='h-color--iron50 g-list0 h-childs-space-top- h-text-'>
+              {% for e in TRAITS %}<li>{{ e }}</li>{% endfor %}
+            </ul>
+          </section>
+
+          <section class='{{ gridItemClass }}'>
+            <h3 class='h-text--caps h-color--iron'>Plans</h3>
+            <ul class='h-color--iron50 g-list0 h-childs-space-top- h-text-'>
+              {% for e in PLANS %}<li>{{ e }}</li>{% endfor %}
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}
