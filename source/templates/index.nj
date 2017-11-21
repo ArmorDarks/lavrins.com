@@ -53,8 +53,8 @@ showContentTitle: false
   <div class='Wrapper h-padding-bottom++ h-padding-top+' style='min-height: 80vh;'>
     <div class='Wrapper__content Wrapper__content--extended'>
       <div class='Box h-padding+'>
-        <div class='o-grid h-childs-displace++ h-childs-space-top+ h-childs-space-top0@tablet'>
-          {% set gridItemClass = 'o-grid__item h-1/1 h-1/3@tablet' %}
+        <div class='o-grid h-childs-displace++ h-childs-space-top+ h-childs-space-top0@tablet-ls'>
+          {% set gridItemClass = 'o-grid__item h-1/1 h-1/3@tablet-ls' %}
 
           <section class='{{ gridItemClass }}'>
             <h3 class='h-text--caps h-color--iron'>Technologies</h3>

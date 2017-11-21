@@ -44,7 +44,7 @@
     <p>
       {{ Email(
         CONTACTS.main.email,
-        class = 'h-text--underline0 h-text--em+ h-extra-h+@tablet h-text--tracked25',
+        class = 'h-text--underline0 h-text--em+ h-extra-h@tablet h-extra-h+@tablet-ls h-text--tracked25',
         domainClass = 'h-color--primary'
       ) }}
     </p>
