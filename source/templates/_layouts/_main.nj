@@ -8,6 +8,7 @@
 <!-- Header -->
 <!-- ====== -->
 
+{% block header %}
 <header class='Wrapper'>
   <p class='Wrapper__content h-extra-h h-align--center'>
     <a href='#main' class='h-text--tracked07 h-text--underline0 js-smooth-jump'>
@@ -16,6 +17,7 @@
     </a>
   </p>
 </header>
+{% endblock %}
 
 <!-- Main -->
 <!-- ==== -->
@@ -35,6 +37,7 @@
 <!-- Footer -->
 <!-- ====== -->
 
+{% block footer %}
 <footer class='Footer Wrapper'>
   <div class='Wrapper__content'>
 
@@ -50,5 +53,6 @@
 
   </div>
 </footer>
+{% endblock %}
 
 {% endblock %}

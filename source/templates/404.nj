@@ -15,9 +15,27 @@ showBreadcrumb:   false
 
 {% extends '_layouts/_main.nj' %}
 
-{% block main %}
-<h1 class='h-text++ h-margin-bottom+'><b>404</b> — page not found</h1>
+{% block header %}
+{% endblock %}
 
-<p>Lost? Just use magic button below:</p>
-<p class='h-margin-top+'><a class='Btn g-link--back' href='{{ localeDir() }}'>Home</a></p>
+{% block main %}
+<div class='Wrapper'>
+  <div class='Wrapper__content h-align--center'>
+
+    <header class='h-extra-h++ h-text--tracked25 h-color--white'>
+      <h1 class='h-extra-h++ h-margin-bottom0'>
+        <span class='h-color--primary'>4</span>0<span class='h-color--primary'>4</span>
+      </h1>
+      <div>4<span class='h-color--primary'>0</span>4</div>
+      <div><span class='h-color--primary'>4</span>0<span class='h-color--primary'>4</span></div>
+    </header>
+
+    <p class='h-text+ h-margin-top+ h-font-weight--lighter'>I tried hard, but was unable to find your page :(</p>
+    <p class='h-margin-top+'><a class='Btn Btn+ Btn--wide h-text--em+--' href='{{ localeDir() }}'>Home</a></p>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
 {% endblock %}
