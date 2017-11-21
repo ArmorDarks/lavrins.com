@@ -1,0 +1,3 @@
+[submodule "source/assets"]
+	path = source/assets
+	url = git@github.com:ArmorDarks/assets.lavrins.com.git
