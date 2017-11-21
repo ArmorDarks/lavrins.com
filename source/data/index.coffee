@@ -60,7 +60,6 @@ module.exports = ({ config }) ->
       { title: 'Test', image: 'works/4.png' }
       { title: 'Test', image: 'works/5.png' }
       { title: 'Test', image: 'works/6.png' }
-      { title: 'Test', image: 'works/7.png' }
       { title: 'Test', image: 'works/8.png' }
       { title: 'Test', image: 'works/9.png' }
       { title: 'Test', image: 'works/10.jpg' }
