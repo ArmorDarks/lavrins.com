@@ -1,0 +1,31 @@
+{##
+ # Displays list of social urls icons
+ #
+ # @param {string} [class]          Class for main wrapper
+ # @param {string} [itemsClass]     Class for each item
+ # @param {string} [anchorsClass]   Class for each anchor
+ # @param {string} [iconsClass]     Class for icons
+ #
+ # @return {string} List of urls in form of `<ul>`
+ #
+ # @example {{ SocialUrls() }}
+ #}
+{% macro SocialUrls(class, itemsClass, anchorsClass, iconsClass) %}
+<ul class='{{ class }} g-list0 h-inline-block h-align--middle h-childs-displace- h-text--em+--'>
+
+  {% macro Item(name, iconName, url, itemClass = itemsClass, anchorClass = anchorsClass, iconClass = iconsClass)
+  %}
+  <li class='{{ itemClass }} Icon--left h-inline-block'>
+    <a href='{{ url }}' class='{{ anchorClass }} h-opacity--30 h-opacity--100:h' aria-label='{{ name }}' target='_blank' rel='noopener'>
+      <span aria-hidden='true'>{{ Icon(iconName, class = iconClass) }}</span>
+    </a>
+  </li>
+  {% endmacro %}
+
+  {{ Item('Github', 'github', SOCIAL.github.url) }}
+  {{ Item('LinkedIn', 'linkedin', SOCIAL.linkedin.url) }}
+  {{ Item('Twitter', 'twitter', SOCIAL.twitter.url) }}
+  {{ Item('Facebook', 'facebook', SOCIAL.facebook.url) }}
+
+</ul>
+{% endmacro %}

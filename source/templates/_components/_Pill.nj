@@ -1,0 +1,12 @@
+{##
+ # Display a pill
+ #
+ # @param {string} label A label for the pill
+ #
+ # @return {string} A pill
+ #
+ # @example {{ Pill('Nice tag') }}
+ #}
+{% macro Pill(label) %}
+<span class='Pill'>{{ label }}</span>
+{% endmacro %}

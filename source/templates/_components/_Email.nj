@@ -1,0 +1,21 @@
+{##
+ # Display email from contacts data
+ #
+ # @param {pbject} data Complex object with email data. See source/data/index.coffee
+ # @param {string} [class] CSS class for anchor
+ # @param {string} [domainClass] CSS class for everything that goes after `@`
+ #
+ # @return {string} Email inside anchor
+ #
+ # @example {{ Email(CONTACTS.main.email) }}
+ #}
+{% macro Email(data, class, domainClass) %}
+{% set salt1 = 'ThateShould' %}
+{% set salt2 = 'BetHere' %}
+
+<a class='{{ class }}'
+  href='mailto:{{ data[0] }}{{ salt1 }}+nt.{{ salt2 }}&#64;{{ salt1 }}+nt.{{ salt2 }}{{ data[1] }}'
+  onmouseover="this.href = this.href.replace(/{{ salt1 }}\+nt\.{{ salt2 }}/g, '');">
+  {{ data[0] }}<span class="h-none">|This+Shouldn't.{{ salt2 }}|</span><span class='{{ domainClass }}'>&#64;<span class="h-none">|SameForThisPart|</span>{{ data[1] }}</span>
+</a>
+{% endmacro %}

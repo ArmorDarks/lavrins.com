@@ -1,0 +1,15 @@
+{##
+ # Display work as a card
+ #
+ # @param {string} title Title of the card. Also used for image `alt`
+ # @param {string} image Filepath to image of the card relatively to `PATH.images`
+ #
+ # @return {string} Work as a card
+ #
+ # @example {{ WorkCard('Some nice work', 'works/some-work.png') }}
+ #}
+{% macro WorkCard(title, image) %}
+<article class='Work-card'>
+  <img class='Work-card__image' src='{{ urljoin('/', PATH.images, image) }}' alt='{{ title }}'>
+</article>
+{% endmacro %}

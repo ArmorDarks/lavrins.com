@@ -15,16 +15,8 @@ showContentTitle: false
 
 {% block main %}
 {% from '_components/_Icon.nj' import Icon with context %}
-
-{% macro Pill(label) %}
-<span class='Pill'>{{ label }}</span>
-{% endmacro %}
-
-{% macro WorkCard(title, image) %}
-<article class='Work-card'>
-  <img class='Work-card__image' src='{{ urljoin('/', PATH.images, image) }}' alt='{{ title }}'>
-</article>
-{% endmacro %}
+{% from '_components/_Pill.nj' import Pill with context %}
+{% from '_components/_WorkCard.nj' import WorkCard with context %}
 
 <section class='Wrapper h-padding-ends++'>
   <div class='Wrapper__content h-1/1'>
