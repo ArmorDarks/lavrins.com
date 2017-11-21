@@ -54,21 +54,21 @@ module.exports = ({ config }) ->
       main:
         email: ['hello', 'lavrins.com']
     WORKS: [
-      { title: 'Test', image: 'works/1.jpg' }
-      { title: 'Test', image: 'works/2.png' }
-      { title: 'Test', image: 'works/3.png' }
-      { title: 'Test', image: 'works/4.png' }
-      { title: 'Test', image: 'works/5.png' }
-      { title: 'Test', image: 'works/6.png' }
-      { title: 'Test', image: 'works/8.png' }
-      { title: 'Test', image: 'works/9.png' }
-      { title: 'Test', image: 'works/10.jpg' }
-      { title: 'Test', image: 'works/11.png' }
-      { title: 'Test', image: 'works/13.png' }
-      { title: 'Test', image: 'works/12.png' }
-      { title: 'Test', image: 'works/14.png' }
-      { title: 'Test', image: 'works/15.png' }
-      { title: 'Test', image: 'works/16.png' }
+      { title: 'cFosSpeed data structure research', image: 'works/cFosSpeed-data-structure-research.png' }
+      { title: 'PW website UX sketch', image: 'works/PW-website-UX-sketch.png' }
+      { title: 'Bilbuch website-mindmap', image: 'works/Bilbuch-website-mindmap.png' }
+      { title: 'TGS website mindmap', image: 'works/TGS-website-mindmap.png' }
+      { title: 'TGS website prototype', image: 'works/TGS-website-prototype.png' }
+      { title: 'CatBase website prototype', image: 'works/CatBase-website-prototype.png' }
+      { title: 'PWRawen website mockup', image: 'works/PWRawen-website-mockup.png' }
+      { title: 'PWR.Radar landing', image: 'works/PWR-Radar-landing.png' }
+      { title: 'PWR.Radar prototype', image: 'works/PWR-Radar-prototype.jpg' }
+      { title: 'PWR.Radar website', image: 'works/PWR-Radar-website.png' }
+      { title: 'Mortal Online landing', image: 'works/Mortal-Online-landing.png' }
+      { title: 'cFosSpeed landing', image: 'works/cFosSpeed-landing.png' }
+      { title: 'PIB ISTU website', image: 'works/PIB-ISTU-website.png' }
+      { title: 'Fasenergo website', image: 'works/Fasenergo-website.png' }
+      { title: 'TGS website', image: 'works/TGS-website.png' }
     ]
     SPECS: [
       'Product Design'
