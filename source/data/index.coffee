@@ -26,8 +26,8 @@ module.exports = ({ config }) ->
       themeColor: '#141616'
       locales: config('locales')
       baseLocale: config('baseLocale')
-      googleAnalyticsId: false # 'UA-XXXXX-X'
-      yandexMetrikaId: false # 'XXXXXX'
+      googleAnalyticsId: 'UA-38994317-7'
+      yandexMetrikaId: '46733736'
     PLACEHOLDERS:
       company: pkg.name
     PAGE_DEFAULTS:

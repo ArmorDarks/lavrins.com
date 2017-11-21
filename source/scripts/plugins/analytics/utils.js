@@ -1,4 +1,4 @@
-const YA_COUNTER_ID = 'ID'
+const YA_COUNTER_ID = '46733736'
 
 /**
  * Send exception to Google Analytics
