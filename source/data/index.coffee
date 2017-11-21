@@ -38,17 +38,15 @@ module.exports = ({ config }) ->
       showContentTitle: true
     SOCIAL: # Add any other social services following same pattern
       github:
-        image: "/#{imagesPath}social/github.png"
         url: 'https://github.com/ArmorDarks'
       linkedin:
-        image: "/#{imagesPath}/social/inkedin.png"
         url: 'https://www.linkedin.com/in/lavrin/'
       twitter:
         handle: '@ArmorDarks'
-        image: "/#{imagesPath}/social/witter.png"
+        image: "/#{imagesPath}/social/twitter.png"
         url: "https://twitter.com/ArmorDarks"
       facebook:
-        image: "/#{imagesPath}/social/acebook.png"
+        image: "/#{imagesPath}/social/facebook.png"
         url: 'https://www.facebook.com/serj.lavrinenko'
     CONTACTS:
       main:
