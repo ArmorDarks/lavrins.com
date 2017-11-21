@@ -11,12 +11,12 @@
  # @example {{ SocialUrls() }}
  #}
 {% macro SocialUrls(class, itemsClass, anchorsClass, iconsClass) %}
-<ul class='{{ class }} g-list0 h-inline-block h-align--middle h-childs-displace- h-text--em+--'>
+<ul class='{{ class }} g-list0 h-childs-displace- h-text--em+--'>
 
   {% macro Item(name, iconName, url, itemClass = itemsClass, anchorClass = anchorsClass, iconClass = iconsClass)
   %}
   <li class='{{ itemClass }} Icon--left h-inline-block'>
-    <a href='{{ url }}' class='{{ anchorClass }} h-opacity--30 h-opacity--100:h' aria-label='{{ name }}' target='_blank' rel='noopener'>
+    <a href='{{ url }}' class='js-metrica-social-btn {{ anchorClass }} h-opacity--30 h-opacity--100:h' aria-label='{{ name }}' target='_blank' rel='noopener'>
       <span aria-hidden='true'>{{ Icon(iconName, class = iconClass) }}</span>
     </a>
   </li>

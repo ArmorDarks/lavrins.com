@@ -28,7 +28,7 @@ showContentTitle: false
     </div>
 
     <p class='h-align--center h-margin-top++'>
-      <a class='Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
+      <a class='js-metrica-open-source Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
         {{ Icon('github', class = 'Icon--left') }} View Open Source activity
       </a>
     </p>

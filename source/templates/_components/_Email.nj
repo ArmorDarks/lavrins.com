@@ -13,7 +13,7 @@
 {% set salt1 = 'ThateShould' %}
 {% set salt2 = 'BetHere' %}
 
-<a class='{{ class }}'
+<a class='js-metrica-email {{ class }}'
   href='mailto:{{ data[0] }}{{ salt1 }}+nt.{{ salt2 }}&#64;{{ salt1 }}+nt.{{ salt2 }}{{ data[1] }}'
   onmouseover="this.href = this.href.replace(/{{ salt1 }}\+nt\.{{ salt2 }}/g, '');">
   {{ data[0] }}<span class="h-none">|This+Shouldn't.{{ salt2 }}|</span><span class='{{ domainClass }}'>&#64;<span class="h-none">|SameForThisPart|</span>{{ data[1] }}</span>
