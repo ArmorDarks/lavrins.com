@@ -8,8 +8,8 @@ export default () => {
       if ($element.contains($target)) cb()
     })
 
-    forEachTarget(document.querySelectorAll('.js-metrica-open-source'), () => event('Works', 'click-open-source'))
-    forEachTarget(document.querySelectorAll('.js-metrica-social-btn'), () => event('Misc', 'click-social-btn'))
-    forEachTarget(document.querySelectorAll('.js-metrica-email'), () => event('Misc', 'click-email'))
+    forEachTarget(document.querySelectorAll('.js-metrica-open-source'), () => event('Works', 'CLICK_OPEN_SOURCE'))
+    forEachTarget(document.querySelectorAll('.js-metrica-social-btn'), () => event('Social', 'CLICK_SOCIAL_BTN'))
+    forEachTarget(document.querySelectorAll('.js-metrica-email'), () => event('Contact', 'CLICK_EMAIL'))
   })
 }
