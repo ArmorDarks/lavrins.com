@@ -79,7 +79,7 @@ module.exports = ({ config }) ->
       'A11y'
       'I11n &amp; L10n'
     ]
-    SKILLS: [
+    TECHS: [
       'JavaScript'
       'Node'
       'NPM'

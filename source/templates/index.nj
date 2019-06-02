@@ -58,7 +58,7 @@ showContentTitle: false
 
           <section class='{{ gridItemClass }}'>
             <h3 class='h-text--caps h-color--iron'>Technologies</h3>
-            <p>{% for e in SKILLS %}{{ Pill(e) }}{% endfor %}</p>
+            <p>{% for e in TECHS %}{{ Pill(e) }}{% endfor %}</p>
           </section>
 
           <section class='{{ gridItemClass }}'>
