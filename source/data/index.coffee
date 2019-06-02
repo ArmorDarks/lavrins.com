@@ -70,7 +70,6 @@ module.exports = ({ config }) ->
     ]
     SPECS: [
       'Product Design &amp; Management'
-      'UX/UI'
       'Web Development'
       'Consulting'
       'I11n &amp; L10n'
