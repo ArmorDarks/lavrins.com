@@ -36,7 +36,7 @@
 }
 
   .Work-card__image {
-    @supports(object-fit: cover) {
+    @supports (object-fit: cover) {
       object-fit: cover;
 
       width: 100%;
