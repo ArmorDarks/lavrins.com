@@ -31,8 +31,6 @@
 
   &:after,
   &:before {
-    @extend .#{$ekzo-h-ns}trans--all\+;
-
     content: '';
 
     position: absolute;
@@ -45,6 +43,8 @@
   }
 
   &:before {
+    @extend .#{$ekzo-h-ns}trans--all\+;
+
     top: - $displacement;
     bottom: $displacement;
     left: - $displacement;
@@ -56,6 +56,8 @@
   }
 
   &:after {
+    @extend .#{$ekzo-h-ns}trans--all--delayed\+;
+
     top: $displacement;
     bottom: - $displacement;
     left: $displacement;
@@ -74,8 +76,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-
-    opacity: 0;
   }
 
 }

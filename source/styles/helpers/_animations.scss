@@ -9,3 +9,6 @@
 
 .#{$ekzo-h-ns}trans--all\+,
 %#{$ekzo-h-ns}trans--all\+ { transition: all .3s ease-out !important; }
+
+.#{$ekzo-h-ns}trans--all--delayed\+,
+%#{$ekzo-h-ns}trans--all--delayed\+ { transition: all .3s .3s ease-out !important; }
