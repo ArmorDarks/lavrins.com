@@ -16,6 +16,7 @@ module.exports = () ->
   @config 'sass',
     build:
       options:
+        implementation: sass
         outputStyle: 'nested'
         sourceMap: true
         functions:
