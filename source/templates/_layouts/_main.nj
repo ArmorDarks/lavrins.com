@@ -11,7 +11,7 @@
 {% block header %}
 <header class='Wrapper'>
   <p class='Wrapper__content h-extra-h h-align--center'>
-    <a href='#main' class='h-text--tracked07 h-text--underline0 js-smooth-jump'>
+    <a href='#main' class='h-text--tracked07 h-text--underline0 js-smooth-jump h-font-weight--lighter'>
       Blood, Tears
       <span class='h-color--primary'>&amp;&nbsp;Design</span>
     </a>
