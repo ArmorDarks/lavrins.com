@@ -3,7 +3,12 @@
 // =============================================================================
 
 .Btn {
+  $displacement: ekzo-space(.5);
+
   @extend .#{$ekzo-o-ns}btn;
+  @extend .#{$ekzo-h-ns}trans--all\+;
+
+  position: relative;
 
   @include ekzo-theme() {
     border-color: ekzo-theme(btn-border);
@@ -17,6 +22,62 @@
   padding-bottom: ekzo-em(ekzo-space(.5));
   padding-right:  1em;
   padding-left:   1em;
+
+  &:hover {
+    @include ekzo-theme() {
+      border-color: ekzo-theme(btn-hover-border);
+    }
+  }
+
+  &:after,
+  &:before {
+    @extend .#{$ekzo-h-ns}trans--all\+;
+
+    content: '';
+
+    position: absolute;
+
+    border-width: 1px;
+
+    @include ekzo-theme() {
+      border-color: ekzo-theme(btn-border);
+    }
+  }
+
+  &:before {
+    top: - $displacement;
+    bottom: $displacement;
+    left: - $displacement;
+    right: $displacement;
+
+    @include ekzo-theme() {
+      border-color: ekzo-theme(btn-border-before);
+    }
+  }
+
+  &:after {
+    top: $displacement;
+    bottom: - $displacement;
+    left: $displacement;
+    right: - $displacement;
+
+    @include ekzo-theme() {
+      border-color: ekzo-theme(btn-border-after);
+    }
+  }
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+  }
+
 }
 
 // -----------------------------------------------------------------------------

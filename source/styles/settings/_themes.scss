@@ -74,8 +74,11 @@ $ekzo-colors: (
   // -----------------------------------------------------------------------------
 
   btn:                    ekzo-color(white),
-  btn-border:             rgba(ekzo-color(primary), .5),
+  btn-border-before:      rgba(ekzo-color(primary), .5),
+  btn-border:             rgba(ekzo-color(primary), .5 / 2),
+  btn-border-after:       rgba(ekzo-color(primary), .5 / 3),
   btn-bg:                 null,
+  btn-hover-border:       rgba(ekzo-color(primary), .5 / 4),
 
   // -----------------------------------------------------------------------------
   // Breadcrumb
