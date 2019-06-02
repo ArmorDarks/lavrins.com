@@ -49,7 +49,7 @@ aliases:
       command: |
         sudo apt-get update;
         sudo apt-get install lftp;
-        lftp sftp://${username}:${password}@${hostname} -e "mirror -v -R ./build ./; quit"
+        lftp sftp://${username}:${password}@${hostname} -e "mirror -v -R ./build ./html; quit"
 
 
 version: 2
