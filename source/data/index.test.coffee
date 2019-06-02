@@ -10,14 +10,14 @@ data = require('./index')
 
 data = grunt.config.process(data(grunt)())
 
-Data = module.exports = t.struct({
-  PATH: t.struct
+Data = module.exports = t.interface({
+  PATH: t.interface
     fonts: t.String
     images: t.String
     scripts: t.String
     styles: t.String
     sprites: t.String
-    source: t.struct
+    source: t.interface
       root: t.String
       data: t.String
       fonts: t.String
@@ -29,7 +29,7 @@ Data = module.exports = t.struct({
       static: t.String
       styles: t.String
       templates: t.String
-    build: t.struct
+    build: t.interface
       root: t.String
       assets: t.String
       fonts: t.String
@@ -39,7 +39,7 @@ Data = module.exports = t.struct({
       static: t.String
       styles: t.String
       templates: t.String
-  SITE: t.struct
+  SITE: t.interface
     name: t.String
     shortName: r.Maxlength(12)(t.String)
     version: t.String
@@ -48,7 +48,7 @@ Data = module.exports = t.struct({
     logo: t.maybe r.Imagepath
     viewport: t.String
     themeColor: t.String
-    locales: r.EqualKeyAndProp('locale') t.dict t.String, t.struct({
+    locales: r.EqualKeyAndProp('locale') t.dict t.String, t.interface({
       locale: t.String
       url: t.String
       rtl: t.Boolean
@@ -60,29 +60,29 @@ Data = module.exports = t.struct({
     googleAnalyticsId: t.union [t.String, r.False]
     yandexMetrikaId: t.union [t.String, r.False]
   PLACEHOLDERS: t.dict(t.String, t.Any)
-  PAGE_DEFAULTS: t.struct
+  PAGE_DEFAULTS: t.interface
     image: t.maybe t.String
     class: t.maybe t.String
     bodyClass: t.maybe t.String
     applyWrapper: t.maybe t.Boolean
     showContentTitle: t.maybe t.Boolean
-  SOCIAL: t.dict t.String, t.struct({
+  SOCIAL: t.dict t.String, t.interface({
       handle: t.maybe r.Handle
       image: t.maybe r.Imagepath
       url: r.Absoluteurl
     }, { name: 'Social' })
-  CONTACTS: t.dict t.String, t.struct({
+  CONTACTS: t.dict t.String, t.interface({
     email: r.Maxlength(2)(t.list(t.String))
   })
-  WORKS: t.dict t.String, t.struct({
-    title: t.String
-    image: t.Imagepath
-  })
+  WORKS: t.list t.interface({
+      title: t.String
+      image: r.Imagepath
+    }, { name: 'WORKS' })
   SPECS: t.list(t.String)
-  SKILLS: t.list(t.String)
+  TECHS: t.list(t.String)
   TRAITS: t.list(t.String)
   PLANS: t.list(t.String)
-  ENV: t.struct
+  ENV: t.interface
     production: t.maybe t.Boolean
     staging: t.maybe t.Boolean
     build: t.maybe t.Boolean
