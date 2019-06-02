@@ -47,9 +47,10 @@ aliases:
   - &deploy
       name: Deploy if tests pass and branch is master
       command: |
-        sudo apt-get update;
-        sudo apt-get install lftp;
-        lftp sftp://${username}:${password}@${hostname} -e "mirror -v -R ./build ./html; quit"
+        sudo apt-get install lftp
+        echo
+        echo 'Syncing with the remote:'
+        lftp ftp://${FTP_USERNAME}:${FTP_PASSWORD}@${FTP_HOSTNAME} -e "set ftp:ssl-allow off; mirror -v -e -R ./build /html; quit"
 
 
 version: 2
