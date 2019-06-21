@@ -23,9 +23,9 @@ showContentTitle: false
       <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter'>Serj <span class='h-color--primary'>Lavrin</span></h2>
 
       <p class='h-text+ h-font-weight--lighter h-margin-top1.5'>Product Designer &amp; Web Developer</p>
-      <p class='Wrapper--readable h-margin-left0 h-margin-top1.5'>
+      {# <p class='Wrapper--readable h-margin-left0 h-margin-top1.5'>
         {% for e in SPECS %}{{ Pill(e) }}{% endfor %}
-      </p>
+      </p> #}
 
     </div>
   </header>
