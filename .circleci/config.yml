@@ -2,10 +2,6 @@ aliases:
   - &node
     - image: circleci/node:10
 
-  - &checkout-submodules
-      name: Checkout submodules
-      command: git submodule update --init --recursive
-
   - &save-repo-cache
       key: repo-cache-{{ .Environment.CIRCLE_SHA1 }}
       paths:
@@ -40,35 +36,31 @@ aliases:
   - &restore-build-cache
       key: build-cache-{{ .Environment.CIRCLE_SHA1 }}
 
-  - &install-npm
-      name: Install latest version of npm
-      command: sudo npm install -g npm@latest
-
-  - &deploy
-      name: Deploy if tests pass and branch is master
-      command: |
-        sudo apt-get install lftp
-        echo
-        echo 'Syncing with the remote:'
-        lftp ftp://${FTP_USERNAME}:${FTP_PASSWORD}@${FTP_HOSTNAME} -e "set ftp:ssl-allow off; mirror -v -e -R ./build /html; quit"
-
-
 version: 2
 jobs:
   checkout:
     machine: true
     steps:
       - checkout
-      - run: *checkout-submodules
+      - run:
+          name: Checkout submodules
+          command: git submodule update --init --recursive
       - save_cache: *save-repo-cache
 
   setup:
     docker: *node
     steps:
-      - run: *install-npm
+      - run:
+          name: Install lftp
+          command: sudo apt-get install lftp
+      - run:
+          name: Install latest version of NPM
+          command: sudo npm install -g npm@latest
       - restore_cache: *restore-repo-cache
       - restore_cache: *restore-jspm-cache
-      - run: npm ci
+      - run:
+          name: Install NPM dependencies
+          command: npm ci
       - save_cache: *save-npm-cache
       - save_cache: *save-jspm-cache
 
@@ -78,7 +70,9 @@ jobs:
       - restore_cache: *restore-repo-cache
       - restore_cache: *restore-npm-cache
       - restore_cache: *restore-jspm-cache
-      - run: npm run test
+      - run:
+          name: Run tests
+          command: npm test
 
   build:
     docker: *node
@@ -86,7 +80,9 @@ jobs:
       - restore_cache: *restore-repo-cache
       - restore_cache: *restore-npm-cache
       - restore_cache: *restore-jspm-cache
-      - run: npm run build
+      - run:
+          name: Build
+          command: npm run build
       - save_cache: *save-build-cache
 
   greenkeeper:
@@ -103,7 +99,9 @@ jobs:
     steps:
       - restore_cache: *restore-repo-cache
       - restore_cache: *restore-build-cache
-      - deploy: *deploy
+      - deploy:
+          name: Sync via FTP
+          command: lftp ftp://${FTP_USERNAME}:${FTP_PASSWORD}@${FTP_HOSTNAME} -e "set ftp:ssl-allow off; mirror -v -e -R ./build /html; quit"
 
 workflows:
   version: 2
