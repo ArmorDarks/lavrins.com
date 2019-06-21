@@ -88,12 +88,10 @@ $ekzo-colors: (
   breadcrumb-delimiters: ekzo-tint(ekzo-color(iron), 50),
 
   pill: ekzo-color(iron50),
-  pill-bg: #141616,
+  pill-bg: #1c1f1f,
 
   box-border: rgba(ekzo-color(primary), .1),
 
-  main-bg: rgba(#000, .25),
-  about-bg: rgba(#000, .15),
-  footer-bg: rgba(#000, .25)
+  main-bg-shader: rgba(#000, .25)
 
 ))

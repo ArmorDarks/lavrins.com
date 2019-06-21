@@ -2,7 +2,7 @@
 url: /
 
 title:           ={{ gettext('Serj Lavrin — Research, Design, Web Development') }}
-contentTitle:    ={{ gettext("Research, <span class='h-color--primary'>Design</span>, Development") }}
+contentTitle:    ={{ gettext("Research, <span class='h-color--primary'>Design</span>, Develop") }}
 navTitle:        ={{ gettext('Home') }}
 breadcrumbTitle: ={{ gettext('Home') }}
 
@@ -13,30 +13,10 @@ showContentTitle: false
 
 {% extends '_layouts/_main.nj' %}
 
-{% block main %}
-{% from '_components/_Icon.nj' import Icon with context %}
+{% block header %}
 {% from '_components/_Pill.nj' import Pill with context %}
-{% from '_components/_WorkCard.nj' import WorkCard with context %}
 
-<section class='Wrapper h-padding-ends++'>
-  <div class='Wrapper__content h-1/1'>
-
-    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-bottom+'>{{ PAGE.contentTitle }}</h1>
-
-    <div class='h-childs-space-top-'>
-      {% for e in WORKS %}{{ WorkCard(e.title, e.image) }}{% endfor %}
-    </div>
-
-    <p class='h-align--center h-margin-top++'>
-      <a class='js-metrica-open-source Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
-        {{ Icon('github', class = 'Icon--left') }} Open Source activity
-      </a>
-    </p>
-
-  </div>
-</section>
-
-<section class='About'>
+<section>
   <header class='Wrapper h-padding-top++' style='min-height: 80vh;'>
     <div class='Wrapper__content Wrapper__content--extended h-padding+ h-1/1@tablet'>
 
@@ -78,6 +58,30 @@ showContentTitle: false
         </div>
       </div>
     </div>
+  </div>
+</section>
+{% endblock header %}
+
+{% block main %}
+{% from '_components/_Icon.nj' import Icon with context %}
+{% from '_components/_Pill.nj' import Pill with context %}
+{% from '_components/_WorkCard.nj' import WorkCard with context %}
+
+<section class='Wrapper h-padding-ends++'>
+  <div class='Wrapper__content h-1/1'>
+
+    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-top+ h-margin-bottom++ h-align--center'>{{ PAGE.contentTitle }}</h1>
+
+    <div class='h-childs-space-top-'>
+      {% for e in WORKS %}{{ WorkCard(e.title, e.image) }}{% endfor %}
+    </div>
+
+    <p class='h-align--center h-margin-top++'>
+      <a class='js-metrica-open-source Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
+        {{ Icon('github', class = 'Icon--left') }} Open Source activity
+      </a>
+    </p>
+
   </div>
 </section>
 {% endblock %}

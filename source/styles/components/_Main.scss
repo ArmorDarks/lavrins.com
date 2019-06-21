@@ -6,7 +6,7 @@
 
 .Main {
   @include ekzo-theme() {
-    background-color: ekzo-theme(main-bg);
+    background-color: ekzo-theme(main-bg-shader);
   }
 
   p:last-child,

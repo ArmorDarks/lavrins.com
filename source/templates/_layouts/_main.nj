@@ -38,7 +38,7 @@
 <!-- ====== -->
 
 {% block footer %}
-<footer class='Footer Wrapper'>
+<footer class='Wrapper'>
   <div class='Wrapper__content'>
 
     <p>
