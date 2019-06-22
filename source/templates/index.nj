@@ -17,15 +17,21 @@ showContentTitle: false
 {% from '_components/_Pill.nj' import Pill with context %}
 
 <section>
+
   <header class='Wrapper h-padding-top++' style='min-height: 80vh;'>
     <div class='Wrapper__content Wrapper__content--extended h-padding+ h-1/1@tablet'>
 
-      <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter'>Serj <span class='h-color--primary'>Lavrin</span></h2>
+      <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter h-margin-bottom-'>Serj <span class='h-color--primary'>Lavrin</span></h2>
 
-      <p class='h-text+ h-font-weight--lighter h-margin-top1.5'>Product Designer &amp; Web Developer</p>
+      <p class='h-text+ h-font-weight--lighter h-margin-bottom0'>Product Designer &amp; Web Developer</p>
+
       {# <p class='Wrapper--readable h-margin-left0 h-margin-top1.5'>
         {% for e in SPECS %}{{ Pill(e) }}{% endfor %}
       </p> #}
+
+      {# <div class='Wrapper--readable h-margin-left0 h-margin-top+'>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta laborum perferendis accusantium labore, a praesentium dolorum nihil maxime fugit maiores. Nulla aliquid expedita repellat ullam eaque pariatur porro ad possimus recusandae perspiciatis provident consectetur, incidunt dicta non maiores.</p>
+      </div> #}
 
     </div>
   </header>
@@ -59,6 +65,7 @@ showContentTitle: false
       </div>
     </div>
   </div>
+
 </section>
 {% endblock header %}
 
@@ -70,7 +77,7 @@ showContentTitle: false
 <section class='Wrapper h-padding-ends++'>
   <div class='Wrapper__content h-1/1'>
 
-    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-top+ h-margin-bottom++ h-align--center'>{{ PAGE.contentTitle }}</h1>
+    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-top h-margin-bottom++ h-align--center'>{{ PAGE.contentTitle }}</h1>
 
     <div class='h-childs-space-top-'>
       {% for e in WORKS %}{{ WorkCard(e.title, e.image) }}{% endfor %}

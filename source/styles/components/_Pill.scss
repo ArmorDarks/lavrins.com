@@ -5,10 +5,10 @@
 .Pill {
   display: inline-block;
 
-  padding-left: ekzo-space(.5);
-  padding-right: ekzo-space(.5);
-  padding-top: ekzo-space(.25) / 2;
-  padding-bottom: ekzo-space(.25) / 2;
+  padding-left: ekzo-space() / 3;
+  padding-right: ekzo-space() / 3;
+  padding-top: 0;
+  padding-bottom: 0;
 
   margin-bottom: ekzo-space(.25);
 
