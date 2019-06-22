@@ -1,12 +1,9 @@
-// stylelint-disable selector-max-type
-
 // =============================================================================
-// ^MAIN
+// ^Footer
 // =============================================================================
 
-.Main {
-
-  p:last-child,
-  ul:last-child { margin-bottom: 0; }
-
+.Footer {
+  @include ekzo-theme() {
+    background-color: ekzo-theme(main-bg-shader);
+  }
 }

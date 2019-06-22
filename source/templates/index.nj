@@ -14,77 +14,28 @@ showContentTitle: false
 {% extends '_layouts/_main.nj' %}
 
 {% block header %}
-{% from '_components/_Pill.nj' import Pill with context %}
-
-<section>
-
-  <header class='Wrapper h-padding-top++' style='min-height: 80vh;'>
-    <div class='Wrapper__content Wrapper__content--extended h-padding+ h-1/1@tablet'>
-
-      <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter h-margin-bottom-'>Serj <span class='h-color--primary'>Lavrin</span></h2>
-
-      <p class='h-text+ h-font-weight--lighter h-margin-bottom0'>Product Designer &amp; Web Developer</p>
-
-      {# <p class='Wrapper--readable h-margin-left0 h-margin-top1.5'>
-        {% for e in SPECS %}{{ Pill(e) }}{% endfor %}
-      </p> #}
-
-      {# <div class='Wrapper--readable h-margin-left0 h-margin-top+'>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta laborum perferendis accusantium labore, a praesentium dolorum nihil maxime fugit maiores. Nulla aliquid expedita repellat ullam eaque pariatur porro ad possimus recusandae perspiciatis provident consectetur, incidunt dicta non maiores.</p>
-      </div> #}
-
-    </div>
-  </header>
-
-  <div class='Wrapper h-padding-bottom++ h-padding-top+' style='min-height: 80vh;'>
-    <div class='Wrapper__content Wrapper__content--extended'>
-      <div class='Box h-padding+'>
-        <div class='o-grid h-childs-displace++ h-childs-space-top+ h-childs-space-top0@tablet-ls'>
-          {% set gridItemClass = 'o-grid__item h-1/1 h-1/3@tablet-ls' %}
-
-          <section class='{{ gridItemClass }}'>
-            <h3 class='h-text--caps h-color--iron'>Technologies</h3>
-            <p>{% for e in TECHS %}{{ Pill(e) }}{% endfor %}</p>
-          </section>
-
-          <section class='{{ gridItemClass }}'>
-            <h3 class='h-text--caps h-color--iron'>Traits</h3>
-            <ul class='h-color--iron50 g-list0 h-childs-space-top- h-text-'>
-              {% for e in TRAITS %}<li>{{ e }}</li>{% endfor %}
-            </ul>
-          </section>
-
-          <section class='{{ gridItemClass }}'>
-            <h3 class='h-text--caps h-color--iron'>Plans</h3>
-            <ul class='h-color--iron50 g-list0 h-childs-space-top- h-text-'>
-              {% for e in PLANS %}<li>{{ e }}</li>{% endfor %}
-            </ul>
-          </section>
-
-        </div>
-      </div>
-    </div>
+<header class='Wrapper h-flex h-flex-y--center h-padding-top+' style='min-height: 90vh;'>
+  <div class='Wrapper__content h-padding-sides- h-padding-sides+@tablet h-margin-bottom h-1/1'>
+    <h2 class='h-extra-h++ h-text--tracked07 h-font-weight--lighter h-margin-bottom-'>Serj <span class='h-color--primary'>Lavrin</span></h2>
+    <p class='Wrapper--readable h-margin-left0 h-text+ h-font-weight--lighter h-margin-top+' style='max-width: 25em;'>As&nbsp;a&nbsp;Product Designer &amp;&nbsp;Software Developer, I&nbsp;solve complex problems, help reach business goals, provide better user experience and make our world better.</p>
   </div>
-
-</section>
+</header>
 {% endblock header %}
 
 {% block main %}
 {% from '_components/_Icon.nj' import Icon with context %}
-{% from '_components/_Pill.nj' import Pill with context %}
+{# {% from '_components/_Pill.nj' import Pill with context %} #}
 {% from '_components/_WorkCard.nj' import WorkCard with context %}
 
-<section class='Wrapper h-padding-ends++'>
+<section class='Wrapper h-padding-bottom+'>
   <div class='Wrapper__content h-1/1'>
 
-    <h1 class='h-h2 h-font-weight--lighter h-h1@tablet h-margin-top h-margin-bottom++ h-align--center'>{{ PAGE.contentTitle }}</h1>
-
-    <div class='h-childs-space-top-'>
+    <div class='h-childs-space-top'>
       {% for e in WORKS %}{{ WorkCard(e.title, e.image) }}{% endfor %}
     </div>
 
     <p class='h-align--center h-margin-top++'>
-      <a class='js-metrica-open-source Btn Btn+ Btn--wide h-text--em+-- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
+      <a class='js-metrica-open-source Btn Btn+ Btn--wide h-text--em+--- h-h2@tablet h-font-weight--lighter' href='https://github.com/ArmorDarks' target='_blank' rel='noopener'>
         {{ Icon('github', class = 'Icon--left') }} Open Source activity
       </a>
     </p>

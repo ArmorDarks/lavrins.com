@@ -8,7 +8,7 @@
 
 $ekzo-margin-helpers-variations: (
   '-': ekzo-space(.5),
-  // '': ekzo-space(1),
+  '': ekzo-space(),
   1\.5: ekzo-space(1.5),
   \+: ekzo-space(2),
   \+\+: ekzo-space(4),
@@ -25,7 +25,7 @@ $ekzo-bleed-helpers-variations: (
 );
 
 $ekzo-padding-helpers-variations: (
-  // '--': ekzo-space(.5),
+  '-': ekzo-space(.5),
   // '': ekzo-space(1),
   \+: ekzo-space(3),
   \+\+: ekzo-space(6),
