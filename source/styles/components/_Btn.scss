@@ -3,8 +3,6 @@
 // =============================================================================
 
 .Btn {
-  $displacement: ekzo-space(.5);
-
   @extend .#{$ekzo-o-ns}btn;
   @extend .#{$ekzo-h-ns}trans--all\+;
 
@@ -27,55 +25,6 @@
     @include ekzo-theme() {
       border-color: ekzo-theme(btn-hover-border);
     }
-  }
-
-  &:after,
-  &:before {
-    content: '';
-
-    position: absolute;
-
-    border-width: 1px;
-
-    @include ekzo-theme() {
-      border-color: ekzo-theme(btn-border);
-    }
-  }
-
-  &:before {
-    @extend .#{$ekzo-h-ns}trans--all\+;
-
-    top: - $displacement;
-    bottom: $displacement;
-    left: - $displacement;
-    right: $displacement;
-
-    @include ekzo-theme() {
-      border-color: ekzo-theme(btn-border-before);
-    }
-  }
-
-  &:after {
-    @extend .#{$ekzo-h-ns}trans--all--delayed\+;
-
-    top: $displacement;
-    bottom: - $displacement;
-    left: $displacement;
-    right: - $displacement;
-
-    @include ekzo-theme() {
-      border-color: ekzo-theme(btn-border-after);
-    }
-  }
-
-  &:hover:after,
-  &:focus:after,
-  &:hover:before,
-  &:focus:before {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
   }
 
 }
