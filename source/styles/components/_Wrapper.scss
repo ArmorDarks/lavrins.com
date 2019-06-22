@@ -2,7 +2,8 @@
 // ^WRAPPER
 // =============================================================================
 
-$wrapper-padding: ekzo-space();
+$wrapper-padding: ekzo-space(.5);
+$tablet-wrapper-padding: ekzo-space();
 
 .Wrapper {
   display: flex;
@@ -11,12 +12,16 @@ $wrapper-padding: ekzo-space();
   // justify-content: center;
   align-items: center;
 
-  padding: $wrapper-padding;
+  padding: ekzo-space(.5);
   min-height: 100vh;
+
+  @include ekzo-breakpoint(tablet) {
+    padding: ekzo-space();
+  }
 }
 
   .Wrapper__content {
-    min-width: 320px;
+    min-width: 250px;
     max-width: 1200px;
 
     margin-left:  auto;
@@ -30,10 +35,6 @@ $wrapper-padding: ekzo-space();
     // from both sides
     max-width: 1200px + ekzo-space(3) * 2;
   }
-
-.Wrapper--bleed {
-  margin: - $wrapper-padding;
-}
 
 // ----
 // Limit to ~80 characters per line
