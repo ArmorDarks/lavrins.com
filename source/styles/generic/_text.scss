@@ -4,4 +4,11 @@
 // =============================================================================
 
 .#{$ekzo-h-ns}text--tracked07 { letter-spacing: .07em; }
+
 .#{$ekzo-h-ns}text--tracked25 { letter-spacing: .25em; }
+
+.#{$ekzo-h-ns}text--tracked25\@tablet {
+  @include ekzo-breakpoint(tablet) {
+    letter-spacing: .25em;
+  }
+}
