@@ -1,12 +1,12 @@
 ---
 url: /
 
-title:           ={{ gettext('Serj Lavrin — Research, Design, Web Development') }}
-contentTitle:    ={{ gettext("Research, <span class='h-color--primary'>Design</span>, Develop") }}
+title:           ={{ gettext('Serj Lavrin — Design & Software Development') }}
+contentTitle:    ={{ gettext('Serj Lavrin') }}
 navTitle:        ={{ gettext('Home') }}
 breadcrumbTitle: ={{ gettext('Home') }}
 
-description: ={{ gettext('Personal website of Serj Lavrin, a Product Designer &amp; Web Developer') }}
+description: ={{ gettext('Personal website of Serj Lavrin, a Product Designer &amp; Software Developer') }}
 
 showContentTitle: false
 ---
