@@ -2,9 +2,6 @@
 // ^WRAPPER
 // =============================================================================
 
-$wrapper-padding: ekzo-space(.5);
-$tablet-wrapper-padding: ekzo-space();
-
 .Wrapper {
   display: flex;
 
@@ -12,17 +9,16 @@ $tablet-wrapper-padding: ekzo-space();
   // justify-content: center;
   align-items: center;
 
-  padding: ekzo-space(.5);
-  min-height: 100vh;
+  padding: $wrapper-padding;
 
   @include ekzo-breakpoint(tablet) {
-    padding: ekzo-space();
+    padding: $tablet-wrapper-padding;
   }
 }
 
   .Wrapper__content {
     min-width: 250px;
-    max-width: 1200px;
+    max-width: $max-width;
 
     margin-left:  auto;
     margin-right: auto;

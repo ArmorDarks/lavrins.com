@@ -4,18 +4,28 @@
 {% from '_components/_Icon.nj' import Icon with context %}
 {% from '_components/_Email.nj' import Email with context %}
 {% from '_components/_SocialUrls.nj' import SocialUrls with context %}
+{% from '_components/_NavItem.nj' import NavItem with context %}
 
 <!-- Header -->
 <!-- ====== -->
 
 {% block header %}
-<header class='Wrapper'>
-  <p class='Wrapper__content h-extra-h h-align--center'>
-    <a href='#main' class='h-text--tracked07 h-text--underline0 js-smooth-jump h-font-weight--lighter'>
-      Blood, Tears
-      <span class='h-color--primary'>&amp;&nbsp;Design</span>
-    </a>
-  </p>
+<header class='Nav h-padding-sides h-padding-sides1.5@tablet h-padding-sides@max h-padding-ends- h-padding-ends@tablet'>
+  <div class='h-flex h-flex-x--between h-flex-y--center h-childs-space-left- h-1/1'>
+
+    <a href='/' title='{{ SITE.name }}' class='g-link--inherit h-text+'>S<span class='h-color--primary'>L</span></a>
+
+    <nav class='o-nav h-childs-space-left- h-childs-space-left@tablet h-text-'>
+      {{ NavItem('/', exact = true, class = 'Nav__item') }}
+      <a class='Nav__item' href='/about'>About</a>
+
+      {{ Email(
+        CONTACTS.main.email,
+        class = 'Nav__item'
+      ) }}
+    </nav>
+
+  </div>
 </header>
 {% endblock %}
 

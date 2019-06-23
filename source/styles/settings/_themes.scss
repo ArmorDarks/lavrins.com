@@ -82,6 +82,9 @@ $ekzo-colors: (
   // Breadcrumb
   // -----------------------------------------------------------------------------
 
+  nav-item: ekzo-color(iron50),
+  nav-item-active: ekzo-color(iron),
+
   breadcrumb-links:      ekzo-color(iron),
   breadcrumb-delimiters: ekzo-tint(ekzo-color(iron), 50),
 

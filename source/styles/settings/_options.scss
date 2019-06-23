@@ -26,7 +26,8 @@ $ekzo-bleed-helpers-variations: (
 
 $ekzo-padding-helpers-variations: (
   '-': ekzo-space(.5),
-  // '': ekzo-space(1),
+  '': ekzo-space(1),
+  1\.5: ekzo-space(1.5),
   \+: ekzo-space(3),
   \+\+: ekzo-space(6),
   // '0': 0
