@@ -51,9 +51,6 @@ jobs:
     docker: *node
     steps:
       - run:
-          name: Install lftp
-          command: sudo apt-get install lftp
-      - run:
           name: Install latest version of NPM
           command: sudo npm install -g npm@latest
       - restore_cache: *restore-repo-cache
@@ -99,6 +96,9 @@ jobs:
     steps:
       - restore_cache: *restore-repo-cache
       - restore_cache: *restore-build-cache
+      - run:
+          name: Install lftp
+          command: sudo apt-get install lftp
       - deploy:
           name: Sync via FTP
           command: lftp ftp://${FTP_USERNAME}:${FTP_PASSWORD}@${FTP_HOSTNAME} -e "set ftp:ssl-allow off; mirror -v -e -R ./build /html; quit"
