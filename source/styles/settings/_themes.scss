@@ -2,13 +2,15 @@
 // ^SETTING.THEMES
 // =============================================================================
 
+$iron: #e8e8e8;
+
 $ekzo-colors: (
   // #6443ab
   primary: #27fe56,
   secondary: kotsu-theme-color(),
   white: #fff,
-  iron: #dcdcdc,
-  iron50: rgba(#dcdcdc, .5),
+  iron: $iron,
+  iron50: rgba($iron, .5),
   black-30: rgba(#000, .3)
 );
 
