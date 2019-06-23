@@ -19,7 +19,7 @@ showBreadcrumb:   false
 {% endblock %}
 
 {% block main %}
-<div class='Wrapper'>
+<div class='Wrapper' style='min-height: 100vh;'>
   <div class='Wrapper__content h-align--center'>
 
     <header class='h-extra-h++ h-text--tracked25 h-color--white'>
@@ -30,8 +30,8 @@ showBreadcrumb:   false
       <div><span class='h-color--primary'>4</span>0<span class='h-color--primary'>4</span></div>
     </header>
 
-    <p class='h-text+ h-margin-top+ h-font-weight--lighter'>I tried hard, but was unable to find your page :(</p>
-    <p class='h-margin-top+'><a class='Btn Btn+ Btn--wide h-text--em+--' href='{{ localeDir() }}'>Home</a></p>
+    <p class='h-text+ h-margin-top+ h-font-weight--lighter'>I tried hard, but did not find that page</p>
+    <p class='h-margin-top+'><a class='Btn Btn+ Btn--wide h-text--em+--' href='{{ localeDir() }}'>Maybe go to the main?</a></p>
 
   </div>
 </div>
