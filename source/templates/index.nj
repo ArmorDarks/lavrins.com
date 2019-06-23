@@ -27,7 +27,7 @@ showContentTitle: false
 {# {% from '_components/_Pill.nj' import Pill with context %} #}
 {% from '_components/_WorkCard.nj' import WorkCard with context %}
 
-<section class='Wrapper h-padding-bottom+'>
+<section class='Wrapper h-padding-bottom+' style='min-height: 100vh;'>
   <div class='Wrapper__content h-1/1'>
 
     <div class='h-childs-space-top'>

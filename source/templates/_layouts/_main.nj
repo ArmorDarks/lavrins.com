@@ -48,7 +48,7 @@
 <!-- ====== -->
 
 {% block footer %}
-<footer class='Footer Wrapper'>
+<footer class='Footer Wrapper' style='min-height: 100vh;'>
   <div class='Wrapper__content'>
 
     <p>
