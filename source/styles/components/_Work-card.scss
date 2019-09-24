@@ -13,6 +13,8 @@
 
   &:after,
   &:before {
+    transition: all .3s ease;
+
     content: '';
     display: block;
     position: absolute;
@@ -31,6 +33,13 @@
     background-image:
       linear-gradient(180deg, rgba(#141414, 0) 73.48%, rgba(#101010, .86) 100%),
       linear-gradient(180deg, rgba(#000, 0) 0%, #000 100%);
+  }
+
+  &:hover,
+  &:focus {
+
+    &:after { opacity: 0; }
+
   }
 
 }
