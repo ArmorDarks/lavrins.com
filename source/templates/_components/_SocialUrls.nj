@@ -22,9 +22,9 @@
   </li>
   {% endmacro %}
 
-  {{ Item('Github', 'github', SOCIAL.github.url, anchorClass = 'js-metrica-gh-btn') }}
   {{ Item('LinkedIn', 'linkedin', SOCIAL.linkedin.url, anchorClass = 'js-metrica-in-btn') }}
   {{ Item('Twitter', 'twitter', SOCIAL.twitter.url, anchorClass = 'js-metrica-tw-btn') }}
+  {{ Item('Github', 'github', SOCIAL.github.url, anchorClass = 'js-metrica-gh-btn') }}
   {{ Item('Facebook', 'facebook', SOCIAL.facebook.url, anchorClass = 'js-metrica-fb-btn') }}
 
 </ul>
