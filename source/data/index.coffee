@@ -52,21 +52,29 @@ module.exports = ({ config }) ->
       main:
         email: ['hello', 'lavrins.com']
     WORKS: [
-      { title: 'cFosSpeed data structure research', image: 'works/cFosSpeed-data-structure-research.jpg' }
-      { title: 'PW website UX sketch', image: 'works/PW-website-UX-sketch.jpg' }
-      { title: 'Bilbuch website-mindmap', image: 'works/Bilbuch-website-mindmap.jpg' }
+      # { title: 'cFosSpeed data structure research', image: 'works/cFosSpeed-data-structure-research.jpg' }
+      # { title: 'PW website UX sketch', image: 'works/PW-website-UX-sketch.jpg' }
+      { title: 'Zelenka ideation', image: 'works/Zelenka-ideation.jpg' }
       { title: 'TGS website mindmap', image: 'works/TGS-website-mindmap.jpg' }
-      { title: 'TGS website prototype', image: 'works/TGS-website-prototype.jpg' }
+      { title: 'Zelenka order process', image: 'works/Zelenka-order-process.jpg' }
+      # { title: 'Bilbuch website-mindmap', image: 'works/Bilbuch-website-mindmap.jpg' }
+      { title: 'Zelenka order flow', image: 'works/Zelenka-order-flow.jpg' }
+      { title: 'Zelenka raw wireframes', image: 'works/Zelenka-raw-wireframes.jpg' }
       { title: 'CatBase website prototype', image: 'works/CatBase-website-prototype.jpg' }
-      { title: 'PWRawen website mockup', image: 'works/PWRawen-website-mockup.jpg' }
-      { title: 'PWR.Radar landing', image: 'works/PWR-Radar-landing.jpg' }
+      { title: 'Zelenka wireframes', image: 'works/Zelenka-wireframes.jpg' }
+      # { title: 'TGS website prototype', image: 'works/TGS-website-prototype.jpg' }
+      # { title: 'PWRawen website mockup', image: 'works/PWRawen-website-mockup.jpg' }
+      # { title: 'PWR.Radar landing', image: 'works/PWR-Radar-landing.jpg' }
       { title: 'PWR.Radar prototype', image: 'works/PWR-Radar-prototype.jpg' }
       { title: 'PWR.Radar website', image: 'works/PWR-Radar-website.jpg' }
       { title: 'Mortal Online landing', image: 'works/Mortal-Online-landing.jpg' }
       { title: 'cFosSpeed landing', image: 'works/cFosSpeed-landing.jpg' }
-      { title: 'PIB ISTU website', image: 'works/PIB-ISTU-website.jpg' }
-      { title: 'Fasenergo website', image: 'works/Fasenergo-website.jpg' }
-      { title: 'TGS website', image: 'works/TGS-website.jpg' }
+      { title: 'Zelenka order screen', image: 'works/Zelenka-new-order.jpg' }
+      { title: 'Zelenka website', image: 'works/Zelenka-website.jpg' }
+      # { title: 'PIB ISTU website', image: 'works/PIB-ISTU-website.jpg' }
+      # { title: 'Fasenergo website', image: 'works/Fasenergo-website.jpg' }
+      { title: 'Fasenergo website', image: 'works/Fasenergo-website-iteration.jpg' }
+      # { title: 'TGS website', image: 'works/TGS-website.jpg' }
     ]
     SPECS: [
       'Product Design &amp; Management'
