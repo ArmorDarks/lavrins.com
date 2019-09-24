@@ -1,0 +1,40 @@
+@mixin scrollbar (
+  $color,
+  $hover-color,
+  $active-color,
+  $track-color,
+  $size: .35rem,
+  $min-size: 1.5rem,
+  $ff-width: thin
+) {
+  -webkit-overflow-scrolling: touch;
+
+  // Edge
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  // Firefox
+  // stylelint-disable-next-line property-no-unknown
+  scrollbar-width: $ff-width;
+  // stylelint-disable-next-line property-no-unknown
+  scrollbar-color: $color $track-color;
+
+  // Chrome, Safari
+  &::-webkit-scrollbar {
+    height: $size;
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-track { background-color: $track-color; }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 3px;
+
+    &:hover { background-color: $hover-color; }
+    &:active { background-color: $active-color; }
+    // stylelint-disable-next-line selector-pseudo-class-no-unknown
+    &:vertical { min-height: $min-size; }
+    // stylelint-disable-next-line selector-pseudo-class-no-unknown
+    &:horizontal { min-width: $min-size; }
+  }
+}

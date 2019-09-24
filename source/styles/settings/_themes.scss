@@ -22,6 +22,11 @@ $ekzo-colors: (
 
   bg:                    ekzo-color(secondary),
 
+  scrollbar: rgba(ekzo-color(iron), .6),
+  scrollbar-hover: rgba(ekzo-color(iron), .7),
+  scrollbar-active: rgba(ekzo-color(iron), .8),
+  scrollbar-track: transparent,
+
   // -----------------------------------------------------------------------------
   // Text
   // -----------------------------------------------------------------------------

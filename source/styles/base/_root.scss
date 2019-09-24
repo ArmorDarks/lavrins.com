@@ -1,5 +1,7 @@
 // stylelint-disable selector-max-type
 
+@import '../helpers/scrollbar';
+
 // =============================================================================
 // ^MAIN
 // =============================================================================
@@ -14,7 +16,16 @@
 // HTML
 // -----------------------------------------------------------------------------
 
-html {}
+html {
+  @include ekzo-theme() {
+    @include scrollbar(
+      $color: ekzo-theme('scrollbar'),
+      $hover-color: ekzo-theme('scrollbar-hover'),
+      $active-color: ekzo-theme('scrollbar-active'),
+      $track-color: ekzo-theme('scrollbar-track')
+    );
+  }
+}
 
 // -----------------------------------------------------------------------------
 // Body
