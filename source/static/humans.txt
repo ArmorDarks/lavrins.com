@@ -5,7 +5,7 @@
 
 # TEAM
 
-  Developer: Serj Lavrin
+  Developer: Sergii Lavrin
   Site: https://lavrins.com
   Twitter: https://twitter.com/ArmorDarks
   Github: https://github.com/ArmorDarks
@@ -23,7 +23,7 @@
   Github: https://github.com/mrhyde
   Location: Europe
 
-  Developer: Serj Lavrin
+  Developer: Sergii Lavrin
   Site: #
   Twitter: https://twitter.com/ArmorDarks
   Github: https://github.com/ArmorDarks
