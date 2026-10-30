@@ -5,6 +5,11 @@ on:
     branches: [master]
   pull_request:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only show what deploy would change on the server
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -43,24 +48,63 @@ jobs:
       group: deploy
       cancel-in-progress: false
     env:
-      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-      FTP_HOSTNAME: ${{ secrets.FTP_HOSTNAME }}
+      DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+      DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
+      DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+      DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+      DEPLOY_KNOWN_HOSTS: ${{ vars.DEPLOY_KNOWN_HOSTS }}
     steps:
-      - name: Check FTP secrets
+      - name: Check deploy settings
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         run: |
-          for name in FTP_USERNAME FTP_PASSWORD FTP_HOSTNAME; do
+          for name in DEPLOY_SSH_KEY DEPLOY_HOST DEPLOY_USER DEPLOY_PATH DEPLOY_KNOWN_HOSTS; do
             if [ -z "${!name}" ]; then
-              echo "::error::Repository secret $name is not set"
+              echo "::error::Repository secret or variable $name is not set"
               missing=1
             fi
           done
+          # `--delete` removes everything in the target which isn't in the build, so refuse obviously wrong targets
+          case "${DEPLOY_PATH%/}" in
+            ""|"."|"~"|"/"|"/home"|"/home/$DEPLOY_USER"|"$DEPLOY_USER")
+              echo "::error::DEPLOY_PATH '$DEPLOY_PATH' looks like a home or root directory, not a site folder"
+              missing=1
+              ;;
+          esac
           exit "${missing:-0}"
+
+      - name: Configure SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          if ! ssh-keygen -y -P '' -f ~/.ssh/deploy_key > /dev/null; then
+            echo "::error::DEPLOY_SSH_KEY is not a valid private key without a passphrase"
+            exit 1
+          fi
+
       - uses: actions/download-artifact@v8
         with:
           name: build
           path: build
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-      - name: Sync via FTP
-        run: lftp "ftp://${FTP_USERNAME}:${FTP_PASSWORD}@${FTP_HOSTNAME}" -e "set ftp:ssl-allow off; mirror -v -e -R ./build /html; quit"
+
+      # `--checksum`, because every build has fresh timestamps, but most files don't change.
+      # `--delay-updates` and `--delete-delay` keep the site consistent until the transfer is complete.
+      # `P` filters protect server-managed files from `--delete`.
+      - name: Sync via rsync
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          rsync --recursive --links --checksum --compress \
+            --delete-delay --delay-updates \
+            --itemize-changes --human-readable --stats \
+            --filter='P /.well-known/' \
+            --filter='P /cgi-bin/' \
+            --filter='P /.htaccess' \
+            --filter='P error_log' \
+            ${DRY_RUN:+"$DRY_RUN"} \
+            -e "ssh -p $DEPLOY_PORT -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
+            build/ "$DEPLOY_USER@$DEPLOY_HOST:${DEPLOY_PATH%/}/"
