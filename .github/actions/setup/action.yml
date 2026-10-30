@@ -1,0 +1,26 @@
+name: Setup
+description: Install Node.js and project dependencies
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        # node-sass 4.12 ships prebuilt binaries only up to Node 12
+        node-version: 10
+        cache: npm
+
+    - uses: actions/cache@v6
+      with:
+        path: jspm_packages
+        key: jspm-${{ hashFiles('package.json', 'jspm.config.js') }}
+
+    # Lifecycle scripts are skipped, because `postinstall` needs `GITHUB_API_KEY` for jspm,
+    # and `gmsmith` (used only by the disabled `sprite` task) requires GraphicsMagick or ImageMagick.
+    # Only node-sass needs its native binding, and jspm packages are installed explicitly.
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm ci --ignore-scripts
+        npm rebuild node-sass
+        node_modules/.bin/jspm install
