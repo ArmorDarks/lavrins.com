@@ -108,7 +108,8 @@ module.exports = () ->
           /^(http(s)?|\/\/).*/
         ]
       files: [
-        src: '<%= path.build.root %>/{,**/}*.html'
+        # `cdn-vampires` is a standalone page with its own inline styles, which shouldn't affect site styles
+        src: ['<%= path.build.root %>/{,**/}*.html', '!<%= path.build.root %>/cdn-vampires/{,**/}*.html']
         dest: '<%= file.build.style.tidy %>'
       ]
 
