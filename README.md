@@ -1,6 +1,6 @@
 # lavrins.com
 
-> Serj Lavrin website
+> Sergii Lavrin website
 
 Based on [Kotsu](https://github.com/LotusTM/Kotsu).
 
