@@ -77,7 +77,8 @@ module.exports = ({ config, file: { readJSON } }) ->
       files: [
         expand: true
         cwd: '<%= path.build.root %>'
-        src: '{,**/}*.html'
+        # `cdn-vampires` is a standalone page, which should be served exactly as authored
+        src: ['{,**/}*.html', '!cdn-vampires/{,**/}*.html']
         dest: '<%= path.build.root %>'
       ]
 
